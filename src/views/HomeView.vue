@@ -1,10 +1,10 @@
 <script setup>
 import { computed } from 'vue'
-import Card from '../components/Card.vue'
+import Card from '../components/CardShop.vue'
 import { useShopStore } from '../stores/shop'
 
 const state = useShopStore()
-
+console.log(state.shop);
 const showBattonAndLoader = computed(() => {
   return state.shopCatalog.length !== state.shop.length
 })
@@ -18,7 +18,7 @@ const addToBasket = (product) => {
   <div>
     <div class="store-catalog-container">
       <div class="store-catalog">
-        <Card :products="state.shop" :basket="state.basket" @basket="addToBasket"/>
+        <Card :products="state.shop"  @basket="addToBasket"/>
       </div>
       <div class="loader-container" v-if="state.isLoading">
         <span class="loader"></span>
