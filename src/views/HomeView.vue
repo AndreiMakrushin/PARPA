@@ -4,7 +4,7 @@ import Card from '../components/CardShop.vue'
 import { useShopStore } from '../stores/shop'
 
 const state = useShopStore()
-console.log(state.shop);
+
 const showBattonAndLoader = computed(() => {
   return state.shopCatalog.length !== state.shop.length
 })

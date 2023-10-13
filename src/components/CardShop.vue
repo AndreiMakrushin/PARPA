@@ -1,4 +1,5 @@
 <script setup>
+import camera from '../assets/Maskgroup.png'
 const props = defineProps({
   products: Array
 })
@@ -7,31 +8,30 @@ const props = defineProps({
 <template>
   <div>
     <div class="card-container">
-      <div
-        class="card"
-        v-for="product in props.products"
-        :key="product.id"
-      >
+      <div class="card" v-for="product in props.products" :key="product.id">
         <div class="top-card">
-          <img :src="product.image ? product.image : '../assets/Maskgroup.png'" />
+          <img :src="product.image ? product.image : camera" />
         </div>
         <div class="bottom-card">
-          <div class="padding-card" >
+          <div class="padding-card">
             <div class="title-card">
               <span>{{ product.title }}</span>
               <p>{{ product.title.split(' ')[0] }}</p>
             </div>
-            <div class="price-card" v-if="product.count !== '0'">
+            <div class="price-card" >
               <span>{{ Number(product.price).toLocaleString('ru-RU') }} ₽</span>
-              <div class="basket">
+              <div class="basket" v-if="product.count !== '0' && product.count !== null">
                 <img src="../assets/basket.png" alt="" @click="$emit('basket', product)" />
               </div>
+              <div v-else class="zero-count">
+              <img
+                src="https://sun9-26.userapi.com/impg/J_A91KTUFS3Pa83bpCVlV-oTSv8XPQCDGt8MMQ/LKHxbe_q1ME.jpg?size=1280x720&quality=95&sign=359977b767983d138e1aee8d0107468c&c_uniq_tag=6B0CI5ScN5i_KpIJiCw9N56WiDMvInrXMhoeTi3Rnh4&type=album"
+                alt=""
+              />
             </div>
-            <div v-else class="zero-count">
-            <img src="https://sun9-26.userapi.com/impg/J_A91KTUFS3Pa83bpCVlV-oTSv8XPQCDGt8MMQ/LKHxbe_q1ME.jpg?size=1280x720&quality=95&sign=359977b767983d138e1aee8d0107468c&c_uniq_tag=6B0CI5ScN5i_KpIJiCw9N56WiDMvInrXMhoeTi3Rnh4&type=album" alt="">
+            </div>
+            
           </div>
-          </div>
-          
         </div>
       </div>
     </div>
@@ -59,13 +59,13 @@ const props = defineProps({
   background-color: #bababa;
   border-radius: 10px 10px 0px 0px;
 }
-.zero-count{
+.zero-count {
   margin-left: auto;
-  margin-top: 20px;
+  margin-top: -43.5px;
   display: flex;
   width: 120px;
 }
-.zero-count img{
+.zero-count img {
   width: 100%;
 }
 .bottom-card {

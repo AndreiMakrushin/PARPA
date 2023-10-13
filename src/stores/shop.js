@@ -19,7 +19,7 @@ export const useShopStore = defineStore('shop', () => {
             isLoading.value = false
         }, 600)
     }
-
+    console.log(shopCatalog);
     watch(basket, () => {
         console.log(basket.value);
     })
