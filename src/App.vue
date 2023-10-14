@@ -8,7 +8,6 @@ import Header from './components/Header.vue'
     <div class="main-container">
       <div class="container">
         <Header />
-
         <RouterView />
       </div>
     </div>
@@ -24,8 +23,7 @@ import Header from './components/Header.vue'
 }
 .container {
   display: flex;
-  width: 1440px;
+  max-width: 1440px;
   flex-direction: column;
-  align-items: center;
 }
 </style>

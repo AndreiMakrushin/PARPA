@@ -1,4 +1,4 @@
-import { computed, ref, watch } from 'vue'
+import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 /* import axios from 'axios' */
 import shopCatalog from '../shop/shop.json'
@@ -19,9 +19,5 @@ export const useShopStore = defineStore('shop', () => {
             isLoading.value = false
         }, 600)
     }
-    console.log(shopCatalog);
-    watch(basket, () => {
-        console.log(basket.value);
-    })
     return { basket, shop, countProduct, isLoading, moreProduct, shopCatalog }
 })

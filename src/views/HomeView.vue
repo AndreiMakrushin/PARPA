@@ -9,8 +9,7 @@ const showBattonAndLoader = computed(() => {
   return state.shopCatalog.length !== state.shop.length
 })
 const addToBasket = (product) => {
- state.basket.push(product)
- console.log(state.basket);
+  state.basket.push(product)
 }
 </script>
 
@@ -18,7 +17,7 @@ const addToBasket = (product) => {
   <div>
     <div class="store-catalog-container">
       <div class="store-catalog">
-        <Card :products="state.shop"  @basket="addToBasket"/>
+        <Card :products="state.shop" @basket="addToBasket" />
       </div>
       <div class="loader-container" v-if="state.isLoading">
         <span class="loader"></span>
@@ -72,7 +71,7 @@ button:hover {
 .loader {
   width: 48px;
   height: 48px;
-  border: 5px solid #000;
+  border: 5px solid #bababa;
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;
