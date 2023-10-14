@@ -32,13 +32,13 @@ const state = useShopStore()
   height: 100px;
   align-items: center;
   justify-content: space-between;
-  flex-grow: 1;
 }
 span {
   border-radius: 50%;
   font-size: 12px;
   color: white;
   padding: 3px;
+  
   background-color: rgb(216, 158, 158);
 }
 .logo {

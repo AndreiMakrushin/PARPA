@@ -23,7 +23,7 @@ import Header from './components/Header.vue'
 }
 .container {
   display: flex;
-  max-width: 1440px;
+  width: 1440px;
   flex-direction: column;
 }
 </style>

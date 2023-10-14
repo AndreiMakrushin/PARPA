@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import Card from '../components/CardShop.vue'
+import Button from '../components/Button.vue';
 import { useShopStore } from '../stores/shop'
 
 const state = useShopStore()
@@ -23,7 +24,7 @@ const addToBasket = (product) => {
         <span class="loader"></span>
       </div>
       <div class="more" v-show="showBattonAndLoader">
-        <button @click="state.moreProduct" :disabled="state.isLoading">Показать больше</button>
+        <Button :text="'Показать больше'" @click="state.moreProduct"/>
       </div>
     </div>
   </div>
@@ -46,27 +47,9 @@ const addToBasket = (product) => {
   width: 100%;
   display: flex;
   align-items: flex-start;
+  justify-content: flex-end;
   margin-top: 30px;
   margin-bottom: 30px;
-}
-button {
-  width: 142px;
-  height: 25px;
-  font-size: 16px;
-  border-radius: 4px;
-  background-color: white;
-  line-height: 18.75px;
-  color: #6a6a6a;
-  border: none;
-  cursor: pointer;
-  margin-left: auto;
-  box-shadow: 0px 5px 5px 1px rgb(0, 0, 0, 0.1);
-  transition: 0.5s;
-}
-button:hover {
-  transition: 0.5s;
-  box-shadow: -5px 5px 5px 5px rgba(0, 0, 0, 0.1);
-  transform: translateX(5px) translateY(-5px);
 }
 .loader {
   width: 48px;
