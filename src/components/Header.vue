@@ -15,7 +15,7 @@ const state = useShopStore()
 
         <nav>
           <RouterLink active-class="active" to="/">Главная</RouterLink>
-          <RouterLink active-class="active" to="/about"
+          <RouterLink active-class="active" to="/backet"
             >Корзина <span v-show="state.basket != 0"> {{ state.basket.length }} </span></RouterLink
           >
         </nav>

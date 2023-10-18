@@ -5,16 +5,14 @@ import PlacingAnOrder from '../components/PlacingAnOrder.vue'
 
 const state = useShopStore()
 
-const removeToBasket = (index) => {
-  state.basket.splice(index, 1)
-}
+
 </script>
 <template>
   <div>
     <div class="store-catalog" v-if="state.basket.length !== 0">
-      <Card :basket="state.basket" @basket="removeToBasket" />
+      <Card :basket="state.basket" @basket="state.removeToBasket" />
       <div class="placing-order">
-        <PlacingAnOrder :basket="state.basket" />
+        <PlacingAnOrder :summ="state.summ" :basket="state.basket" />
       </div>
     </div>
     <div class="basket-null" v-else>

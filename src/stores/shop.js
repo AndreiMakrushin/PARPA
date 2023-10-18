@@ -19,5 +19,23 @@ export const useShopStore = defineStore('shop', () => {
             isLoading.value = false
         }, 600)
     }
-    return { basket, shop, countProduct, isLoading, moreProduct, shopCatalog }
+
+    const summ = computed(() => {
+        return basket.value.length !== 0 ? basket.value.map((item) => Number(item.price)).reduce((a, b) => a + b) : 0
+
+    })
+
+    const removeToBasket = (index) => {
+        basket.value.splice(index, 1)
+    }
+
+    const showBattonAndLoader = computed(() => {
+        return shopCatalog.length !== shop.value.length
+    })
+    const addToBasket = (product) => {
+        basket.value.push(product)
+    }
+
+
+    return { basket, shop, countProduct, isLoading, moreProduct, shopCatalog, summ, removeToBasket, addToBasket, showBattonAndLoader }
 })

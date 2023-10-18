@@ -1,13 +1,8 @@
 <script setup>
-import { computed } from 'vue'
 import Button from './Button.vue'
 const props = defineProps({
-  basket: Array
-})
-
-const summ = computed(() => {
- return props.basket.length !== 0 ? props.basket.map((item) => Number(item.price)).reduce((a, b) => a + b) : 0
- 
+  basket: Array,
+  summ: Number
 })
 </script>
 
@@ -24,7 +19,7 @@ const summ = computed(() => {
             </div>
             <div class="price">
               <p>Общая стоимость:</p>
-              <span>{{ summ }} ₽</span>
+              <span>{{ props.summ }} ₽</span>
             </div>
           </div>
         </div>

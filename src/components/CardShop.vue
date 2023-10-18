@@ -52,6 +52,7 @@ const props = defineProps({
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
 }
 .top-card {
+  overflow: hidden;
   display: flex;
   height: 280px;
   justify-content: center;
